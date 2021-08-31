@@ -7,7 +7,7 @@ function! s:select(object_type)
     if a:object_type ==? 'i'
         let start_position[2] += 1
         if end_position[2] == 1
-            normal! j$
+            normal! k$
             let end_position = getpos('.')
         else
             let end_position[2] -= 1
