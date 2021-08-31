@@ -6,7 +6,12 @@ function! s:select(object_type)
 
     if a:object_type ==? 'i'
         let start_position[2] += 1
-        let end_position[2] -= 1
+        if end_position[2] == 1
+            normal! j$
+            let end_position = getpos('.')
+        else
+            let end_position[2] -= 1
+        endif
     endif
 
     return ['v', start_position, end_position]
